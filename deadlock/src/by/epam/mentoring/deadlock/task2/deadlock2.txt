@@ -1,0 +1,144 @@
+2016-02-18 17:21:00
+Full thread dump Java HotSpot(TM) 64-Bit Server VM (20.6-b01 mixed mode):
+
+"DestroyJavaVM" prio=6 tid=0x000000000059c000 nid=0x3610 waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Thread-7" prio=6 tid=0x00000000070a3000 nid=0x2d48 waiting for monitor entry [0x000000000830f000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at by.epam.mentoring.deadlock.task2.Runner$ThreadTwo.run(Runner.java:55)
+	- waiting to lock <0x00000007ab3b7498> (a java.lang.Object)
+	at java.lang.Thread.run(Thread.java:662)
+
+"Thread-6" prio=6 tid=0x00000000070a2800 nid=0x18f4 waiting for monitor entry [0x000000000820f000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at by.epam.mentoring.deadlock.task2.Runner$ThreadTwo.run(Runner.java:55)
+	- waiting to lock <0x00000007ab3b7498> (a java.lang.Object)
+	at java.lang.Thread.run(Thread.java:662)
+
+"Thread-5" prio=6 tid=0x00000000070a1800 nid=0x3afc waiting for monitor entry [0x000000000810f000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at by.epam.mentoring.deadlock.task2.Runner$ThreadTwo.run(Runner.java:55)
+	- waiting to lock <0x00000007ab3b7498> (a java.lang.Object)
+	at java.lang.Thread.run(Thread.java:662)
+
+"Thread-4" prio=6 tid=0x000000000709f000 nid=0x1a64 waiting for monitor entry [0x000000000800f000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at by.epam.mentoring.deadlock.task2.Runner$ThreadOne.run(Runner.java:40)
+	- waiting to lock <0x00000007ab3b7488> (a java.lang.Object)
+	at java.lang.Thread.run(Thread.java:662)
+
+"Thread-3" prio=6 tid=0x000000000709e800 nid=0x2c44 waiting for monitor entry [0x0000000007f0f000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at by.epam.mentoring.deadlock.task2.Runner$ThreadOne.run(Runner.java:40)
+	- waiting to lock <0x00000007ab3b7488> (a java.lang.Object)
+	at java.lang.Thread.run(Thread.java:662)
+
+"Thread-2" prio=6 tid=0x0000000007091000 nid=0x3b70 waiting for monitor entry [0x0000000007e0f000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at by.epam.mentoring.deadlock.task2.Runner$ThreadOne.run(Runner.java:43)
+	- waiting to lock <0x00000007ab3b7498> (a java.lang.Object)
+	- locked <0x00000007ab3b7488> (a java.lang.Object)
+	at java.lang.Thread.run(Thread.java:662)
+
+"Thread-1" prio=6 tid=0x0000000007090000 nid=0x3b74 waiting for monitor entry [0x0000000007d0f000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at by.epam.mentoring.deadlock.task2.Runner$ThreadTwo.run(Runner.java:58)
+	- waiting to lock <0x00000007ab3b7488> (a java.lang.Object)
+	- locked <0x00000007ab3b7498> (a java.lang.Object)
+	at java.lang.Thread.run(Thread.java:662)
+
+"Thread-0" prio=6 tid=0x0000000007073800 nid=0x2794 waiting for monitor entry [0x0000000007aef000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at by.epam.mentoring.deadlock.task2.Runner$ThreadOne.run(Runner.java:40)
+	- waiting to lock <0x00000007ab3b7488> (a java.lang.Object)
+	at java.lang.Thread.run(Thread.java:662)
+
+"Monitor Ctrl-Break" daemon prio=6 tid=0x0000000007072800 nid=0x3494 runnable [0x00000000079ef000]
+   java.lang.Thread.State: RUNNABLE
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.PlainSocketImpl.accept(PlainSocketImpl.java:408)
+	- locked <0x00000007ab4a6a78> (a java.net.SocksSocketImpl)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:462)
+	at java.net.ServerSocket.accept(ServerSocket.java:430)
+	at com.intellij.rt.execution.application.AppMain$1.run(AppMain.java:90)
+	at java.lang.Thread.run(Thread.java:662)
+
+"Low Memory Detector" daemon prio=6 tid=0x0000000007056000 nid=0xd60 runnable [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"C2 CompilerThread1" daemon prio=10 tid=0x000000000704f000 nid=0x378c waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"C2 CompilerThread0" daemon prio=10 tid=0x0000000007049800 nid=0x386c waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Attach Listener" daemon prio=10 tid=0x0000000007046000 nid=0x3698 waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Signal Dispatcher" daemon prio=10 tid=0x0000000007041000 nid=0x2b5c runnable [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Finalizer" daemon prio=8 tid=0x00000000003cd800 nid=0x2d94 in Object.wait() [0x0000000006fef000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	- waiting on <0x00000007ab361300> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:118)
+	- locked <0x00000007ab361300> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:134)
+	at java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:159)
+
+"Reference Handler" daemon prio=10 tid=0x00000000003c7000 nid=0x3b78 in Object.wait() [0x0000000006eef000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	- waiting on <0x00000007ab3611d8> (a java.lang.ref.Reference$Lock)
+	at java.lang.Object.wait(Object.java:485)
+	at java.lang.ref.Reference$ReferenceHandler.run(Reference.java:116)
+	- locked <0x00000007ab3611d8> (a java.lang.ref.Reference$Lock)
+
+"VM Thread" prio=10 tid=0x00000000003be800 nid=0x3ab0 runnable 
+
+"GC task thread#0 (ParallelGC)" prio=6 tid=0x0000000000318800 nid=0x34a8 runnable 
+
+"GC task thread#1 (ParallelGC)" prio=6 tid=0x000000000031a000 nid=0x1a28 runnable 
+
+"GC task thread#2 (ParallelGC)" prio=6 tid=0x000000000031c000 nid=0x3480 runnable 
+
+"GC task thread#3 (ParallelGC)" prio=6 tid=0x000000000031d800 nid=0x28d4 runnable 
+
+"VM Periodic Task Thread" prio=10 tid=0x0000000007069000 nid=0x1bd4 waiting on condition 
+
+JNI global references: 906
+
+
+Found one Java-level deadlock:
+=============================
+"Thread-7":
+  waiting to lock monitor 0x00000000070a6438 (object 0x00000007ab3b7498, a java.lang.Object),
+  which is held by "Thread-1"
+"Thread-1":
+  waiting to lock monitor 0x00000000070a4f38 (object 0x00000007ab3b7488, a java.lang.Object),
+  which is held by "Thread-2"
+"Thread-2":
+  waiting to lock monitor 0x00000000070a6438 (object 0x00000007ab3b7498, a java.lang.Object),
+  which is held by "Thread-1"
+
+Java stack information for the threads listed above:
+===================================================
+"Thread-7":
+	at by.epam.mentoring.deadlock.task2.Runner$ThreadTwo.run(Runner.java:55)
+	- waiting to lock <0x00000007ab3b7498> (a java.lang.Object)
+	at java.lang.Thread.run(Thread.java:662)
+"Thread-1":
+	at by.epam.mentoring.deadlock.task2.Runner$ThreadTwo.run(Runner.java:58)
+	- waiting to lock <0x00000007ab3b7488> (a java.lang.Object)
+	- locked <0x00000007ab3b7498> (a java.lang.Object)
+	at java.lang.Thread.run(Thread.java:662)
+"Thread-2":
+	at by.epam.mentoring.deadlock.task2.Runner$ThreadOne.run(Runner.java:43)
+	- waiting to lock <0x00000007ab3b7498> (a java.lang.Object)
+	- locked <0x00000007ab3b7488> (a java.lang.Object)
+	at java.lang.Thread.run(Thread.java:662)
+
+Found 1 deadlock.
+
