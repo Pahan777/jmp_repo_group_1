@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd">
+
+
+      <bean id="dateFormat" class="java.text.SimpleDateFormat">
+          <constructor-arg value="yyyy-MM-dd"/>
+      </bean>
+      <bean id="selectedDate" factory-bean="dateFormat" factory-method="parse">
+          <constructor-arg value="2016-02-02"/>
+      </bean>
+      <bean id="human" class="Human">
+           <property name="firstName" value="Ivanov"/>
+           <property name="lastName" value="ivan"/>
+       </bean>
+       <bean id="human2" class="Human">
+           <property name="firstName" value="Ivanov2"/>
+           <property name="lastName" value="ivan2"/>
+       </bean>
+       <bean id="saw" class="Booking">
+           <property name="filmName" value="saw"/>
+           <property name="cost" value="10000"/>
+           <property name="date">
+               <bean factory-bean="dateFormat" factory-method="parse">
+                   <constructor-arg value="2016-02-01"/>
+               </bean>
+           </property>
+
+           <property name="number" value="1"/>
+       </bean>
+       <bean id="fightClub" class="Booking">
+           <property name="filmName" value="fight Club"/>
+           <property name="cost" value="15000"/>
+           <property name="date">
+               <bean factory-bean="dateFormat" factory-method="parse">
+                   <constructor-arg value="2016-02-02"/>
+               </bean>
+           </property>
+           <property name="number" value="2"/>
+       </bean>
+       <bean id="list" class="java.util.ArrayList">
+           <constructor-arg>
+               <list>
+                   <ref bean="saw"/>
+                   <ref bean="fightClub"/>
+               </list>
+           </constructor-arg>
+       </bean>
+
+
+
+</beans>
